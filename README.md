@@ -41,12 +41,41 @@ Autoencoder
 
 ## Metrics
 
-precision  
-recall  
-F1 score  
-false positive rate  
-average inference latency  
-p95 inference latency  
+==================================================
+Isolation Forest Metrics
+==================================================
+Metric                    |           Value
+--------------------------------------------------
+precision                 |          0.4988
+recall                    |          0.7812
+f1                        |          0.6088
+false_positive_rate       |          0.0733
+true_positives            |             200
+false_positives           |             201
+false_negatives           |              56
+true_negatives            |            2543
+avg_latency_ms            |          4.5678
+p95_latency_ms            |          5.1832
+max_latency_ms            |          8.4474
+==================================================
+
+==================================================
+Autoencoder Metrics
+==================================================
+Metric                    |           Value
+--------------------------------------------------
+precision                 |          0.6649
+recall                    |          1.0000
+f1                        |          0.7988
+false_positive_rate       |          0.0470
+true_positives            |             256
+false_positives           |             129
+false_negatives           |               0
+true_negatives            |            2615
+avg_latency_ms            |          0.6422
+p95_latency_ms            |          0.7888
+max_latency_ms            |          1.4693
+==================================================
 
 ## Run
 
