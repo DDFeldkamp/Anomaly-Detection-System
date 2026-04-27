@@ -15,6 +15,22 @@ def train_test_split(df, train_ratio=0.7):
 
     return train_normal, test_df
 
+def print_metrics_table(metrics, title="Model Metrics"):
+    print("\n" + "=" * 50)
+    print(f"{title}")
+    print("=" * 50)
+
+    print(f"{'Metric':<25} | {'Value':>15}")
+    print("-" * 50)
+
+    for key, value in metrics.items():
+        if isinstance(value, float):
+            print(f"{key:<25} | {value:>15.4f}")
+        else:
+            print(f"{key:<25} | {value:>15}")
+
+    print("=" * 50)
+
 
 def main():
     df = generate_sensor_data()
@@ -28,7 +44,7 @@ def main():
     print("Benchmarking Isolation Forest...")
     iso_metrics = benchmark_detector(isolation_detector, test_df)
     print("Isolation Forest Metrics:")
-    print(iso_metrics)
+    print_metrics_table(iso_metrics, "Isolation Forest Metrics")
 
     print("\nTraining Autoencoder...")
     autoencoder_detector = AutoencoderDetector(threshold_percentile=95)
@@ -37,7 +53,7 @@ def main():
     print("Benchmarking Autoencoder...")
     ae_metrics = benchmark_detector(autoencoder_detector, test_df)
     print("Autoencoder Metrics:")
-    print(ae_metrics)
+    print_metrics_table(ae_metrics, "Autoencoder Metrics")
 
     print("\nRunning real-time stream demo...")
     stream = RealTimeSensorStream(test_df.head(200), delay_seconds=0.001)
