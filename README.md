@@ -15,7 +15,7 @@ Precision, recall, false positive rate, and p95 latency benchmarking
 
 ## Motivation
 
-Physical security systems often need to detect unusual activity from noisy and incomplete sensor streams. This project simulates those conditions and evaluates anomaly detection models under real-time constraints.
+Physical security systems often need to detect unusual activity from noisy and incomplete sensor streams. This project simulates those conditions and evaluates anomaly detection models under time constraints.
 
 ## Sensor Inputs
 
